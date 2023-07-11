@@ -14,7 +14,7 @@
         // Cotação vinda da API do Banco Central
         $início = date("m-d-Y", strtotime("-7 days"));
         $fim = ("m-d-Y");
-        $url = 'https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarPeriodo(dataInicial=@dataInicial,dataFinalCotacao=@dataFinalCotacao)?@dataInicial=\''. $início .'\&@dataFinalCotacao=\''. $fim .'\'&$top=1&$orderby=dataHoraCotacao&$format=json&$select=cotacaoCompra,dataHoraCotacao';
+        $url = 'https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarPeriodo(dataInicial=@dataInicial,dataFinalCotacao=@dataFinalCotacao)?@dataInicial=\''. $início .'\'&@dataFinalCotacao=\''. $fim .'\'&$top=1&$orderby=dataHoraCotacao&$format=json&$select=cotacaoCompra,dataHoraCotacao';
     
         $dados = json_decode(file_get_contents($url), true);
     
